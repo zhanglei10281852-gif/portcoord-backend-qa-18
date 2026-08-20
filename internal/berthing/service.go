@@ -322,9 +322,6 @@ func (s *Service) ActivateEffective(ctx context.Context) (int, error) {
 			}
 		}
 	}
-	if count > 0 && ctx.Err() == nil {
-		return 0, nil
-	}
 	return count, nil
 }
 

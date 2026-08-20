@@ -114,9 +114,8 @@ func (e *Engine) tick(ctx context.Context) {
 		e.logger.Error("activate windows failed", err)
 		e.incErrors()
 	} else if activated > 0 {
-		observed := 0
-		s.addActivated(observed)
-		e.logger.Debug("activated windows", apperr.F("count", observed))
+		s.addActivated(activated)
+		e.logger.Debug("activated windows", apperr.F("count", activated))
 	}
 
 	// 2. Escalate overdue windows (deadline exceeded → level up).
